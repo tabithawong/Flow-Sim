@@ -12,9 +12,20 @@ class Substance {
   }
 
   void setcolour() {
-    color[] colourlist = {color(255,255,255), color(153, 204, 255), color(255, 153, 255), color(0, 204, 102), color(204, 0, 0), color(255, 178, 102), color(255, 255, 153)};
-    this.colour = colourlist[index];
-  }
+      color[] defaultlist = {color(255,182,193), color(125),color(173,216,230)};
+      color[] colourlist = {color(153, 204, 255), color(255, 153, 255), color(0, 204, 102), color(204, 0, 0), color(255, 178, 102), color(255, 255, 153)};
+      if (hot == true){
+        this.colour = color(255,112,52);
+      }
+      else{
+        if (index == 0){
+          this.colour = defaultlist[mode];
+        }
+        else{
+          this.colour = colourlist[index-1];
+        }
+      } 
+    }
 
   void drawSubstance(int mode){
     fill(sub.colour);
@@ -22,12 +33,15 @@ class Substance {
       quad(360,250,400,600,600,600,640,250);
     }
     else if (mode == 1){
+      stroke(sub.colour);
+      strokeWeight(8);
+      line(480,555,495,480);
       //some sine wave that looks almost straight
     }
     else{
       stroke(sub.colour);
       int xr = 475;
-      int yr = 219;
+      int yr = 293;
       rect(xr,yr,40,780);
       stroke(65,105,225);
       int xgap = 5;

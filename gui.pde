@@ -60,8 +60,9 @@ public void blow_click1(GButton source, GEvent event) { //_CODE_:blow:685921:
 
 public void temp_click1(GButton source, GEvent event) { //_CODE_:temp:351183:
   hot = !hot;
-  //sub.setcolour();
-} //_CODE_:temp:351183:
+  println(hot);
+  sub.setcolour();
+} 
 
 public void laminaenum_change1(GCustomSlider source, GEvent event) { //_CODE_:laminaenum1:637006:
   println("laminaenum1 - GCustomSlider >> GEvent." + event + " @ " + millis());

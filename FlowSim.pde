@@ -10,7 +10,7 @@ boolean hot;
 Substance sub;
 void setup(){
   size(1000,800);
-  mode = 0;
+  mode = 1;
   candle = loadImage("candle.jpg");
   faucet = loadImage("faucet.jpg");
   createGUI();
@@ -52,40 +52,32 @@ void gridLines(boolean candle){
 void createMech(){
   if (mode == 0){
     background(255,255,255);
-    gridLines(false);
+  //  gridLines(false);
     Blender b = new Blender();
     b.drawBlender();
   }
   else if (mode == 1){
     Candle c = new Candle();
     c.drawCandle();
-    gridLines(true);
+  //  gridLines(true);
   }
   else{
     Faucet f = new Faucet();
     f.drawFaucet();
-    gridLines(false);
+   // gridLines(false);
   }
 }
 
 void createSub(){
   sub = new Substance(v,s,false);
-  if (mode == 0){
-    sub.colour = color(255,182,193);
-  }
-  else if (mode == 1){
-    sub.colour = color(255);
-  }
-  else{
-    sub.colour = color(173,216,230);
-  }
+  sub.setcolour();
   sub.drawSubstance(mode);
 }
 void hotchange(){
   if (hot == true){
-    temp.setText("Change to Hot");
+    temp.setText("Change to Water");
   }
   else{
-    temp.setText("Change to Cold");
+    temp.setText("Change to Lava");
   }
 }

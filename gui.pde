@@ -24,7 +24,7 @@ public void blenderflow_click1(GButton source, GEvent event) { //_CODE_:blenderf
 } //_CODE_:blenderflow:503144:
 
 public void colour_click1(GDropList source, GEvent event) { //_CODE_:colour:699004:
-  int index = colour.getSelectedIndex();
+  index = colour.getSelectedIndex();
   sub.setcolour();
 } //_CODE_:colour:699004:
 
@@ -60,6 +60,7 @@ public void blow_click1(GButton source, GEvent event) { //_CODE_:blow:685921:
 
 public void temp_click1(GButton source, GEvent event) { //_CODE_:temp:351183:
   hot = !hot;
+  //sub.setcolour();
 } //_CODE_:temp:351183:
 
 public void laminaenum_change1(GCustomSlider source, GEvent event) { //_CODE_:laminaenum1:637006:
@@ -93,7 +94,7 @@ public void createGUI(){
   blenderflow.setText("Blender Flow");
   blenderflow.setLocalColorScheme(GCScheme.PURPLE_SCHEME);
   blenderflow.addEventHandler(this, "blenderflow_click1");
-  colour = new GDropList(window1, 40, 40, 90, 240, 7, 10);
+  colour = new GDropList(window1, 42, 39, 90, 270, 8, 10);
   colour.setItems(loadStrings("list_699004"), 0);
   colour.setLocalColorScheme(GCScheme.PURPLE_SCHEME);
   colour.addEventHandler(this, "colour_click1");
@@ -118,7 +119,7 @@ public void createGUI(){
   blow.setLocalColorScheme(GCScheme.PURPLE_SCHEME);
   blow.addEventHandler(this, "blow_click1");
   temp = new GButton(window1, 420, 100, 60, 30);
-  temp.setText("Change to Hot");
+  temp.setText("Change to Lava");
   temp.setLocalColorScheme(GCScheme.PURPLE_SCHEME);
   temp.addEventHandler(this, "temp_click1");
   label1 = new GLabel(window1, 40, 0, 90, 40);
